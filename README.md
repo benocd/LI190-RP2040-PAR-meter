@@ -46,8 +46,8 @@ to avoid ambiguity.
 | ADS1115 | LI-190 Sensor |
 |---|---|
 | A0 | LI-190 red wire |
-| A1 | LI-190 black wire |
-| GND | LI-190 clear wire |
+| A1, GND | LI-190 black wire |
+| A1, GND | LI-190 clear wire |
 
 Connect the LI-190 black/reference wire to **A1 and system ground**. Connect
 the clear shield to ground at the electronics end only.
