@@ -5,7 +5,7 @@ A MicroPython PAR/PPFD meter for a **LI-COR LI-190 quantum sensor**, using:
 - Raspberry Pi Pico
 - ADS1115 16-bit ADC
 - SSD1306 128×64 I²C OLED
-- Sensor calibration for **LI-190 serial Q42893**
+- Sensor calibration specifications
 
 The program prints the raw ADC value, sensor voltage and calculated PPFD to
 the MicroPython console while showing the PPFD and millivolt signal on the
@@ -13,7 +13,7 @@ OLED.
 
 ## Calibration
 
-The calibration certificate for sensor **Q42893** specifies:
+The calibration certificate for this particular sensor specifies:
 
 - Output: **7.59 µA per 1000 µmol m⁻² s⁻¹**
 - With the 604 Ω millivolt adapter/shunt:
@@ -25,10 +25,7 @@ The project therefore calculates:
 PPFD = measured_mV × 218.09
 ```
 
-The certificate is dated 21 December 2009 and recommends recalibration every
-two years after field deployment. The existing calibration is useful for
-development and relative measurements, but recalibration should be considered
-where traceable absolute accuracy is required.
+
 
 ## Wiring
 
@@ -43,9 +40,14 @@ to avoid ambiguity.
 | GND | Any GND |
 | SDA | GP0, physical pin 1 |
 | SCL | GP1, physical pin 2 |
+
+### ADS1115 on LI-190 Sensor
+
+| ADS1115 | LI-190 Sensor |
+|---|---|
 | A0 | LI-190 red wire |
 | A1 | LI-190 black wire |
-| ADDR | GND for address `0x48` |
+| GND | LI-190 clear wire |
 
 Connect the LI-190 black/reference wire to **A1 and system ground**. Connect
 the clear shield to ground at the electronics end only.
