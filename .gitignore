@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# MicroPython tools and IDEs
+.micropico
+.vscode/
+.idea/
+*.code-workspace
+
+# Operating systems
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*~
